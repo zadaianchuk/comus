@@ -1,0 +1,25 @@
+defaults:
+  - ../pathes
+
+name: pascal
+n_classes: 20
+split: train
+pseudolabels_dir: null
+batch_size_per_gpu: 5
+n_gpus: 8
+batch_size: ${multiply:${dataset.batch_size_per_gpu},${dataset.n_gpus}}
+data_parallel: true
+
+# change to you PASCAL VOC root
+root: ${pathes.pascal}
+saliency:
+  type: unsupervised
+  # change to unsupervised BASNet checkpoint path
+  path: ${pathes.saliency}
+  min_size: 400
+  size: 256
+  dino_inputs_size: 256
+  th: 0.5
+  batch_size_per_gpu: 5
+  batch_size: ${multiply:${dataset.saliency.batch_size_per_gpu},${dataset.n_gpus}}
+  use_saved: true

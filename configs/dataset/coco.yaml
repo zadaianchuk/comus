@@ -1,0 +1,25 @@
+defaults:
+  - ../pathes
+
+name: coco
+cat_list: coco_full
+n_classes: 80
+split: train
+batch_size_per_gpu: 5
+n_gpus: 8
+batch_size: ${multiply:${dataset.batch_size_per_gpu},${dataset.n_gpus}}
+data_parallel: true
+root:  ${pathes.coco}
+# dir to store COCO idx
+idx_dir: ${pathes.repo}/data/coco
+saliency:
+  type: unsupervised
+  #path to unsupervised BASNet checkpoint
+  path: ${pathes.saliency}
+  min_size: 400
+  size: 256
+  dino_inputs_size: 256
+  th: 0.5
+  batch_size_per_gpu: 10
+  batch_size: ${multiply:${dataset.saliency.batch_size_per_gpu},${dataset.n_gpus}}
+  use_saved: true

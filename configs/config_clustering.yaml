@@ -1,0 +1,23 @@
+defaults:
+  - _self_
+  - pathes
+  - dataset: pascal
+  - features: dino
+  - clustering: spectral_clustering
+  - evaluation: hungarian
+
+experiment:
+  name: clustering_${dataset.name}
+  run: 1
+model_name: comus
+
+hydra:
+  run:
+    dir: ${results}/${experiment.name}/experiment.run=${experiment.run}
+  job:
+    chdir: True
+    config:
+      override_dirname:
+        exclude_keys:
+          - experiment.run
+job_subdir_key: "hydra.sweep.subdir"

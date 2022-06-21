@@ -1,0 +1,35 @@
+defaults:
+  - _self_
+  - pathes
+  - dataset: pascal
+  - features: dino
+  - clustering: spectral_clustering
+  - evaluation: hungarian
+  - self_training: pascal_eval
+  - eval_model: pascal
+experiment:
+  name: comus_${dataset.name}_eval
+  run: 1
+model_name: comus
+
+# change to your output dir
+output_dir: "path/to/results_dir_to_evaluate"
+# change to name of dir
+#where you want to save the results
+name: validation_results
+no_matching: False
+checkpoint_path: ""
+checkpoint: 4
+ittr: 1
+
+
+hydra:
+  run:
+    dir: ${results}/${experiment.name}/experiment.run=${experiment.run}
+  job:
+    chdir: True
+    config:
+      override_dirname:
+        exclude_keys:
+          - experiment.run
+job_subdir_key: "hydra.sweep.subdir"

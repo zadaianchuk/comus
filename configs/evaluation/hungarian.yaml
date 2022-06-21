@@ -1,0 +1,2 @@
+matching: hungarian
+n_clusters: ${dataset.n_classes}

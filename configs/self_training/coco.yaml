@@ -1,0 +1,13 @@
+train_split: ${dataset.split}
+n_epochs: 0
+input_size: 256
+crops_scale: [0.2, 1.0]
+optimizer:
+  name: adam
+  params:
+    lr: 0.00006
+batch_size_per_gpu: 7
+saveckp_freq: 1
+num_workers: 5
+n_iter: 1
+pretrained_backbone: True

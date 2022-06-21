@@ -1,0 +1,4 @@
+name: kmeans
+params:
+  n_clusters: ${dataset.n_classes}
+core_size: 100

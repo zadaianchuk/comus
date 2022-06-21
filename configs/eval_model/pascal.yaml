@@ -1,0 +1,6 @@
+val_split: val
+pseudolables_split: train
+batch_size: ${self_training.batch_size_per_gpu}
+n_gpus: 8
+num_workers: 10
+output_dir: null

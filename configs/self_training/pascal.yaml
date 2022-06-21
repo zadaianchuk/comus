@@ -1,0 +1,16 @@
+train_split: ${dataset.split}
+n_epochs: 9
+second_stage:
+  train_split: trainaug
+  n_epochs: 4
+input_size: 512
+crops_scale: [0.5, 2]
+optimizer:
+  name: adam
+  params:
+    lr: 0.00006
+batch_size_per_gpu: 7
+saveckp_freq: 1
+num_workers: 4
+n_iter: 2
+pretrained_backbone: True

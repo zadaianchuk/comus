@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "comus"
+version = "0.1.0"
+readme = "README.md"
+description = ""
+authors = ["Andrii Zadaianchuk <andrii.zadaianchuk@tuebingen.mpg.de>"]
+packages = [
+    { include = "thirdparty/*.py" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7.1,<3.9"
+hydra-core = "1.2.0"
+torch = "^1.11.0"
+torchvision = "^0.12.0"
+scikit-learn = "0.24.1"
+scikit-learn-extra = "^0.2.0"
+pandas = "^1.3.0"
+opencv-python = "^4.6.0"
+psutil = "^5.9.1"
+scipy = "^1.7.0"
+tqdm = "^4.64.0"
+pyamg = "^4.2.3"
+albumentations = "^1.2.0"
+pycocotools = "^2.0.4"
+wget = "^3.2"
+
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+pytest = "^7.0.1"
+notebook = "^6.4.12"
+seaborn = "^0.11.2"
+pre-commit = "^2.20.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 101
+target-version = ["py37"]
+
+[tool.isort]
+profile = "black"
+line_length = 101
+skip_gitignore = true
+remove_redundant_aliases = true

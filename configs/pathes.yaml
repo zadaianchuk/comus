@@ -1,0 +1,9 @@
+pathes:
+  #change to path of comus repo
+  repo: /path/to/comus/repo
+
+  pascal: ${pathes.repo}/data/PASCAL_VOC
+  coco: ${pathes.repo}/data/COCO
+  saliency: ${pathes.repo}/data/basnet_unsupervised.pth
+
+results: ${pathes.repo}/results

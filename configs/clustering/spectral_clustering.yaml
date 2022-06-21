@@ -1,0 +1,9 @@
+name: spectral_clustering
+params:
+  n_clusters: ${evaluation.n_clusters}
+  n_neighbors: 30
+  n_components: ${evaluation.n_clusters}
+  n_jobs: 20
+  eigen_solver: amg
+  n_init: 10
+core_size: 80
