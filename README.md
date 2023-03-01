@@ -1,7 +1,15 @@
 # Unsupervised Semantic Segmentation with Self-supervised Object-centric Representations.
 
 ![](./resources/comus_output.png)
-
+```
+@inproceedings{
+zadaianchuk2023unsupervised,
+title={Unsupervised Semantic Segmentation with Self-supervised Object-centric Representations},
+author={Andrii Zadaianchuk and Matthaeus Kleindessner and Yi Zhu and Francesco Locatello and Thomas Brox},
+booktitle={International Conference on Learning Representations},
+year={2023},
+url={https://openreview.net/forum?id=1_jFneF07YC}}
+```
 ## Install
 0. Install poetry: `curl -sSL https://install.python-poetry.org | python3 -
 `
